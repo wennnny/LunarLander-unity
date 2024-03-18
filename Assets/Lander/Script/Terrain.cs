@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class filled : MonoBehaviour
+public class Terrain : MonoBehaviour
 {
     #region setup
     
@@ -13,7 +13,7 @@ public class filled : MonoBehaviour
 
     // polygon properties
     int polygonSize = 4;
-    float polygonRadius = 4.24f;
+    float polygonRadius = 4.25f;
 
     public float height_left = 0;
     public float height_right = 0;
@@ -60,14 +60,15 @@ public class filled : MonoBehaviour
         {
             float currentRadian = radianProgressPerStep * (2*i+1);
             if (i == 0)
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius - 27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -13 + height_right, 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -13 + height_right, 0));
             if (i == 1)
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius - 27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -13 + height_left, 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -13 + height_left, 0));
             else
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius - 27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -17, 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -17 , 0));
         }
-        Debug.Log(no);
+
         Debug.Log(points[0]);
+        Debug.Log(points[2]);
 
         return points;
     }
