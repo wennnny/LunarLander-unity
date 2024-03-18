@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Target : MonoBehaviour
+public class Lander : MonoBehaviour
 {
     #region setup
     
@@ -38,10 +38,12 @@ public class Target : MonoBehaviour
     {
         List<Vector3> points = new List<Vector3>();
 
-        points.Add(new Vector3(0, 0, 0));
-        points.Add(new Vector3(0, 2, 0));
-        points.Add(new Vector3(2, 2, 0));
-        points.Add(new Vector3(2, 0, 0));
+        points.Add(new Vector3(-14/5, +17/5, 0));
+        points.Add(new Vector3(-17/5, 0, 0));
+        points.Add(new Vector3(-17/5, -10/5, 0));
+        points.Add(new Vector3(+17/5, -10/5, 0));
+        points.Add(new Vector3(+17/5, 0, 0));
+        points.Add(new Vector3(+14/5, +17/5, 0));
 
         return points;
     }
