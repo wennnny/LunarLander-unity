@@ -38,12 +38,12 @@ public class Lander : MonoBehaviour
     {
         List<Vector3> points = new List<Vector3>();
 
-        points.Add(new Vector3(-14/5, +17/5, 0));
-        points.Add(new Vector3(-17/5, 0, 0));
-        points.Add(new Vector3(-17/5, -10/5, 0));
-        points.Add(new Vector3(+17/5, -10/5, 0));
-        points.Add(new Vector3(+17/5, 0, 0));
-        points.Add(new Vector3(+14/5, +17/5, 0));
+        points.Add(new Vector3(-14, +17, 0));
+        points.Add(new Vector3(-17, 0, 0));
+        points.Add(new Vector3(-17, -10, 0));
+        points.Add(new Vector3(+17, -10, 0));
+        points.Add(new Vector3(+17, 0, 0));
+        points.Add(new Vector3(+14, +17, 0));
 
         return points;
     }

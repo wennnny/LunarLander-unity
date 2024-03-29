@@ -13,7 +13,7 @@ public class Terrain : MonoBehaviour
 
     // polygon properties
     int polygonSize = 4;
-    float polygonRadius = 4.25f;
+    float polygonRadius = 42.5f;
 
     public float height_left = 0;
     public float height_right = 0;
@@ -60,15 +60,12 @@ public class Terrain : MonoBehaviour
         {
             float currentRadian = radianProgressPerStep * (2*i+1);
             if (i == 0)
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -13 + height_right, 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -130 + height_right, 0));
             if (i == 1)
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -13 + height_left, 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -130 + height_left, 0));
             else
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -27 + (6*(no-1)), Mathf.Sin(currentRadian)*radius -17 , 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -170 , 0));
         }
-
-        Debug.Log(points[0]);
-        Debug.Log(points[2]);
 
         return points;
     }
