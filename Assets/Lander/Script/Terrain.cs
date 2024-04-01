@@ -60,11 +60,11 @@ public class Terrain : MonoBehaviour
         {
             float currentRadian = radianProgressPerStep * (2*i+1);
             if (i == 0)
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -130 + height_right, 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -230 + height_right, 0));
             if (i == 1)
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -130 + height_left, 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -230 + height_left, 0));
             else
-                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -170 , 0));
+                points.Add(new Vector3(Mathf.Cos(currentRadian)*radius -270 + (60*(no-1)), Mathf.Sin(currentRadian)*radius -270 , 0));
         }
 
         return points;
