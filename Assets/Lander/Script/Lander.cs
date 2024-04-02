@@ -11,17 +11,19 @@ public class Lander : MonoBehaviour
     Vector3[] polygonPoint;
     int[] polygonTriangle;
 
+    public float num = 0;
+
     void Start()
     {
         mesh = new Mesh();
         this.GetComponent<MeshFilter>().mesh = mesh;
-
     }
 
     // Update is called once per frame
     void Update()
     {
         DrawFilled();
+        // Debug.Log(num);
     }
     # endregion
 
@@ -38,7 +40,7 @@ public class Lander : MonoBehaviour
     {
         List<Vector3> points = new List<Vector3>();
 
-        points.Add(new Vector3(-14, +17, 0));
+        points.Add(new Vector3(-14 + num, +17, 0));
         points.Add(new Vector3(-17, 0, 0));
         points.Add(new Vector3(-17, -10, 0));
         points.Add(new Vector3(+17, -10, 0));
