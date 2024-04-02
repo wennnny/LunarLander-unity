@@ -26,7 +26,7 @@ namespace RosSharp.RosBridgeClient
         {
             if (scale_left != null && scale_right != null)
             {
-                // Debug.Log("Subscribeed scale:" + scale_left + " " + scale_right);
+                Debug.Log("Subscribeed scale:" + scale_left + " " + scale_right);
             }
             else
             {
