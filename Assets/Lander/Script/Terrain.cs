@@ -10,17 +10,14 @@ public class Terrain : MonoBehaviour
     Mesh mesh;
     Vector3[] polygonPoint;
     int[] polygonTriangle;
-    public float scale_left = 0;
-    public float scale_right = 0;
 
-    public RosSharp.RosBridgeClient.TerrainSubscribe terrainSubscribe;
     public float hight_left = 0;
     public float hight_right = 0;
     public int no;
+    public RosSharp.RosBridgeClient.TerrainSubscribe terrainSubscribe;
 
     void Start()
     {
-        terrainSubscribe = GetComponent<RosSharp.RosBridgeClient.TerrainSubscribe>();
         mesh = new Mesh();
         this.GetComponent<MeshFilter>().mesh = mesh;
     }
@@ -28,9 +25,16 @@ public class Terrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        GetScale();
         DrawFilled();
     }
     # endregion
+
+    void GetScale()
+    {
+        hight_left = terrainSubscribe.scale_left * 10;
+        hight_right = terrainSubscribe.scale_right * 10;
+    }
 
     void DrawFilled()
     {

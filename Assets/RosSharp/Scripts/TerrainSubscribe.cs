@@ -28,11 +28,7 @@ namespace RosSharp.RosBridgeClient
             {
                 Debug.Log("Subscribeed scale:" + scale_left + " " + scale_right);
             }
-            else
-            {
-                Debug.Log("No scale received");
-                isMessageReceived = false;
-            }
+            isMessageReceived = false;
         }
 
         protected override void ReceiveMessage(Float32MultiArray message)
