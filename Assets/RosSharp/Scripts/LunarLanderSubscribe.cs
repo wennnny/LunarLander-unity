@@ -1,11 +1,10 @@
 using UnityEngine;
-using RosSharp.RosBridgeClient.MessageTypes.Std;
+using RosSharp.RosBridgeClient.MessageTypes.Geometry;
 
 namespace RosSharp.RosBridgeClient
 {
-    public class LunarLanderSubscribe : UnitySubscriber<MessageTypes.Std.Float32MultiArray>
+    public class LunarLanderSubscribe : UnitySubscriber<MessageTypes.Geometry.Polygon>
     {
-        public Transform LunarLander;
         private float position;
         private bool isMessageReceived;
 
@@ -35,10 +34,18 @@ namespace RosSharp.RosBridgeClient
             }
         }
 
-        protected override void ReceiveMessage(Float32MultiArray message)
+        protected override void ReceiveMessage(Polygon message)
         {
-            position = message.data[0];
-            isMessageReceived = true;
+            if (message != null)
+            {
+                
+                isMessageReceived = true;
+            }
+            else
+            {
+                Debug.Log("No position received");
+                isMessageReceived = false;
+            }
         }
     }
 }

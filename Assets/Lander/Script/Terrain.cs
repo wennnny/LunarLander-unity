@@ -25,16 +25,11 @@ public class Terrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetScale();
+        hight_left = terrainSubscribe.scale[no-1] * 20;
+        hight_right = terrainSubscribe.scale[no] * 20;
         DrawFilled();
     }
     # endregion
-
-    void GetScale()
-    {
-        hight_left = terrainSubscribe.scale_left * 10;
-        hight_right = terrainSubscribe.scale_right * 10;
-    }
 
     void DrawFilled()
     {
