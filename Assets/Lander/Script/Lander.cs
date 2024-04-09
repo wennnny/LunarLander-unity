@@ -11,7 +11,7 @@ public class Lander : MonoBehaviour
     Vector3[] polygonPoint;
     int[] polygonTriangle;
 
-    public float num = 0;
+    public RosSharp.RosBridgeClient.LunarLanderSubscribe lunarLanderSubscribe;
 
     void Start()
     {
@@ -22,6 +22,7 @@ public class Lander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         DrawFilled();
         // Debug.Log(num);
     }
@@ -40,12 +41,12 @@ public class Lander : MonoBehaviour
     {
         List<Vector3> points = new List<Vector3>();
 
-        points.Add(new Vector3(-14, +17, 0));
-        points.Add(new Vector3(-17, 0, 0));
-        points.Add(new Vector3(-17, -10, 0));
-        points.Add(new Vector3(+17, -10, 0));
-        points.Add(new Vector3(+17, 0, 0));
-        points.Add(new Vector3(+14, +17, 0));
+        points.Add(new Vector3(lunarLanderSubscribe.position_1[0], lunarLanderSubscribe.position_1[1]));
+        points.Add(new Vector3(lunarLanderSubscribe.position_2[0], lunarLanderSubscribe.position_2[1]));
+        points.Add(new Vector3(lunarLanderSubscribe.position_3[0], lunarLanderSubscribe.position_3[1]));
+        points.Add(new Vector3(lunarLanderSubscribe.position_4[0], lunarLanderSubscribe.position_4[1]));
+        points.Add(new Vector3(lunarLanderSubscribe.position_5[0], lunarLanderSubscribe.position_5[1]));
+        points.Add(new Vector3(lunarLanderSubscribe.position_6[0], lunarLanderSubscribe.position_6[1]));
 
         return points;
     }

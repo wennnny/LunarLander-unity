@@ -25,7 +25,7 @@ namespace RosSharp.RosBridgeClient
         {
             if (scale != null)
             {
-                Debug.Log("Subscribeed scale:" + string.Join(", ", scale));
+                Debug.Log("Subscribed scale:" + string.Join(", ", scale));
             }
             isMessageReceived = false;
         }

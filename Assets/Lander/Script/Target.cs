@@ -38,11 +38,10 @@ public class Target : MonoBehaviour
     {
         List<Vector3> points = new List<Vector3>();
 
-        points.Add(new Vector3(0, 0, 0));
-        points.Add(new Vector3(0, 2, 0));
-        points.Add(new Vector3(2, 2, 0));
-        points.Add(new Vector3(2, 0, 0));
-
+        points.Add(new Vector3(-60, -100, 0));
+        points.Add(new Vector3(-60, -130, 0));
+        points.Add(new Vector3(0, -130, 0));
+        points.Add(new Vector3(0, -100, 0));
         return points;
     }
     
