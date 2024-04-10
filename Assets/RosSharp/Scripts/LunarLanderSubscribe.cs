@@ -17,6 +17,11 @@ namespace RosSharp.RosBridgeClient
         protected override void Start()
         {
             base.Start();
+            position_1  = new float[2];
+            position_2  = new float[2];
+            position_3  = new float[2];
+            position_4  = new float[2];
+            position_5  = new float[2];
             position_6  = new float[2]; 
 
         }
