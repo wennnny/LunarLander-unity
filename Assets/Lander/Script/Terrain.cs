@@ -14,7 +14,7 @@ public class Terrain : MonoBehaviour
     public float hight_left = 0;
     public float hight_right = 0;
     public int no;
-    public RosSharp.RosBridgeClient.TerrainSubscribe terrainSubscribe;
+    public RosSharp.RosBridgeClient.TerrainSubscriber terrainSubscriber;
 
     void Start()
     {
@@ -25,8 +25,8 @@ public class Terrain : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hight_left = terrainSubscribe.scale[no-1] * 20;
-        hight_right = terrainSubscribe.scale[no] * 20;
+        hight_left = terrainSubscriber.scale[no-1] * 20;
+        hight_right = terrainSubscriber.scale[no] * 20;
         DrawFilled();
     }
     # endregion

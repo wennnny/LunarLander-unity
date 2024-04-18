@@ -3,7 +3,7 @@ using RosSharp.RosBridgeClient.MessageTypes.Geometry;
 
 namespace RosSharp.RosBridgeClient
 {
-    public class LunarLanderSubscribe : UnitySubscriber<MessageTypes.Geometry.Polygon>
+    public class LunarLanderSubscriber : UnitySubscriber<MessageTypes.Geometry.Polygon>
     {
         public float[] position_1;
         public float[] position_2;

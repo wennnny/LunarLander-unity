@@ -10,8 +10,11 @@ public class Lander : MonoBehaviour
     Mesh mesh;
     Vector3[] polygonPoint;
     int[] polygonTriangle;
+    public ParticleSystem particleSystem;
+    public RosSharp.RosBridgeClient.ThrusterSubscriber thrusterSubscriber;
 
-    public RosSharp.RosBridgeClient.LunarLanderSubscribe lunarLanderSubscribe;
+    public RosSharp.RosBridgeClient.LunarLanderSubscriber lunarLanderSubscriber;
+
 
     void Start()
     {
@@ -22,9 +25,8 @@ public class Lander : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         DrawFilled();
-        // Debug.Log(num);
+        Thrust();
     }
     # endregion
 
@@ -41,12 +43,12 @@ public class Lander : MonoBehaviour
     {
         List<Vector3> points = new List<Vector3>();
 
-        points.Add(new Vector3(lunarLanderSubscribe.position_1[0], lunarLanderSubscribe.position_1[1]));
-        points.Add(new Vector3(lunarLanderSubscribe.position_2[0], lunarLanderSubscribe.position_2[1]));
-        points.Add(new Vector3(lunarLanderSubscribe.position_3[0], lunarLanderSubscribe.position_3[1]));
-        points.Add(new Vector3(lunarLanderSubscribe.position_4[0], lunarLanderSubscribe.position_4[1]));
-        points.Add(new Vector3(lunarLanderSubscribe.position_5[0], lunarLanderSubscribe.position_5[1]));
-        points.Add(new Vector3(lunarLanderSubscribe.position_6[0], lunarLanderSubscribe.position_6[1]));
+        points.Add(new Vector3(lunarLanderSubscriber.position_1[0], lunarLanderSubscriber.position_1[1]));
+        points.Add(new Vector3(lunarLanderSubscriber.position_2[0], lunarLanderSubscriber.position_2[1]));
+        points.Add(new Vector3(lunarLanderSubscriber.position_3[0], lunarLanderSubscriber.position_3[1]));
+        points.Add(new Vector3(lunarLanderSubscriber.position_4[0], lunarLanderSubscriber.position_4[1]));
+        points.Add(new Vector3(lunarLanderSubscriber.position_5[0], lunarLanderSubscriber.position_5[1]));
+        points.Add(new Vector3(lunarLanderSubscriber.position_6[0], lunarLanderSubscriber.position_6[1]));
 
         return points;
     }
@@ -62,5 +64,18 @@ public class Lander : MonoBehaviour
             newTriangles.Add(i+1);
         }
         return newTriangles.ToArray();
+    }
+
+    public void Thrust()
+    {
+        if (thrusterSubscriber.isThrusting == 0)
+        {
+            particleSystem.Stop();
+        }
+        else
+        {
+            particleSystem.transform.position = new Vector3(lunarLanderSubscriber.position_2[0], lunarLanderSubscriber.position_2[1], -100);
+            particleSystem.Play();
+        }
     }
 }

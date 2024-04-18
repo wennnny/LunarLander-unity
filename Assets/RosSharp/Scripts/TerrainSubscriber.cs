@@ -3,7 +3,7 @@ using RosSharp.RosBridgeClient.MessageTypes.Std;
 
 namespace RosSharp.RosBridgeClient
 {
-    public class TerrainSubscribe : UnitySubscriber<MessageTypes.Std.Float32MultiArray>
+    public class TerrainSubscriber : UnitySubscriber<MessageTypes.Std.Float32MultiArray>
     {
         public float[] scale;
         private bool isMessageReceived;
